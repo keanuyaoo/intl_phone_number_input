@@ -10,6 +10,6 @@
 
 @implementation FLTLibphonenumberPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [SwiftLibphonenumberPlugin2 registerWithRegistrar:registrar];
+  [SwiftLibphonenumberPlugin registerWithRegistrar:registrar];
 }
 @end
