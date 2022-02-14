@@ -2,14 +2,14 @@ import Flutter
 import UIKit
 import PhoneNumberKit
 
-public class SwiftLibphonenumberPlugin2: NSObject, FlutterPlugin {
+public class SwiftLibphonenumberPlugin: NSObject, FlutterPlugin {
     
-    let libphonenumber : SwiftLibphonenumberPlugin2 = SwiftLibphonenumberPlugin2()
+//    let libphonenumber : SwiftLibphonenumberPlugin = SwiftLibphonenumberPlugin()
     
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "plugin.libphonenumber", binaryMessenger: registrar.messenger())
         
-        let instance = SwiftLibphonenumberPlugin2()
+        let instance = SwiftLibphonenumberPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
     
@@ -194,15 +194,15 @@ public class SwiftLibphonenumberPlugin2: NSObject, FlutterPlugin {
         }
     }
     
-    func onDirectMethodCall(call: FlutterMethodCall, result: @escaping FlutterResult) {
-        let arguments = call.arguments as! Dictionary<String, Any>
-        let phoneNumber = arguments["phoneNumber"] as! String
-        let isoCode = arguments["isoCode"] as! String
-        
-        let data:[String:String] = ["phone_number": phoneNumber, "iso_code": isoCode]
-        
-        let methodCall:FlutterMethodCall = FlutterMethodCall(methodName: call.method, arguments: data)
-        libphonenumber.handle(methodCall, result: result)
-        return
-    }
+//    func onDirectMethodCall(call: FlutterMethodCall, result: @escaping FlutterResult) {
+//        let arguments = call.arguments as! Dictionary<String, Any>
+//        let phoneNumber = arguments["phoneNumber"] as! String
+//        let isoCode = arguments["isoCode"] as! String
+//        
+//        let data:[String:String] = ["phone_number": phoneNumber, "iso_code": isoCode]
+//        
+//        let methodCall:FlutterMethodCall = FlutterMethodCall(methodName: call.method, arguments: data)
+////        libphonenumber.handle(methodCall, result: result)
+//        return
+//    }
 }
