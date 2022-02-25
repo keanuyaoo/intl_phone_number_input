@@ -69,8 +69,8 @@ public class LibphonenumberPlugin implements FlutterPlugin, MethodCallHandler {
     }
 
     private void handleGetNameForNumber(MethodCall call, Result result) {
-        final String phoneNumber = call.argument("phone_number");
-        final String isoCode = call.argument("iso_code");
+        final String phoneNumber = call.argument("phoneNumber");
+        final String isoCode = call.argument("isoCode");
 
         try {
             Phonenumber.PhoneNumber p = phoneUtil.parse(phoneNumber, isoCode.toUpperCase());
@@ -81,8 +81,8 @@ public class LibphonenumberPlugin implements FlutterPlugin, MethodCallHandler {
     }
 
     private void handleIsValidPhoneNumber(MethodCall call, Result result) {
-        final String phoneNumber = call.argument("phone_number");
-        final String isoCode = call.argument("iso_code");
+        final String phoneNumber = call.argument("phoneNumber");
+        final String isoCode = call.argument("isoCode");
 
         try {
             Phonenumber.PhoneNumber p = phoneUtil.parse(phoneNumber, isoCode.toUpperCase());
@@ -93,8 +93,8 @@ public class LibphonenumberPlugin implements FlutterPlugin, MethodCallHandler {
     }
 
     private void handleNormalizePhoneNumber(MethodCall call, Result result) {
-        final String phoneNumber = call.argument("phone_number");
-        final String isoCode = call.argument("iso_code");
+        final String phoneNumber = call.argument("phoneNumber");
+        final String isoCode = call.argument("isoCode");
 
         try {
             Phonenumber.PhoneNumber p = phoneUtil.parse(phoneNumber, isoCode.toUpperCase());
@@ -106,8 +106,8 @@ public class LibphonenumberPlugin implements FlutterPlugin, MethodCallHandler {
     }
 
     private void handleGetRegionInfo(MethodCall call, Result result) {
-        final String phoneNumber = call.argument("phone_number");
-        final String isoCode = call.argument("iso_code");
+        final String phoneNumber = call.argument("phoneNumber");
+        final String isoCode = call.argument("isoCode");
 
         try {
             Phonenumber.PhoneNumber p = phoneUtil.parse(phoneNumber, isoCode.toUpperCase());
@@ -126,8 +126,8 @@ public class LibphonenumberPlugin implements FlutterPlugin, MethodCallHandler {
     }
 
     private void handleGetNumberType(MethodCall call, Result result) {
-        final String phoneNumber = call.argument("phone_number");
-        final String isoCode = call.argument("iso_code");
+        final String phoneNumber = call.argument("phoneNumber");
+        final String isoCode = call.argument("isoCode");
 
         try {
             Phonenumber.PhoneNumber p = phoneUtil.parse(phoneNumber, isoCode.toUpperCase());
@@ -177,8 +177,8 @@ public class LibphonenumberPlugin implements FlutterPlugin, MethodCallHandler {
     }
 
     private void formatAsYouType(MethodCall call, Result result) {
-        final String phoneNumber = call.argument("phone_number");
-        final String isoCode = call.argument("iso_code");
+        final String phoneNumber = call.argument("phoneNumber");
+        final String isoCode = call.argument("isoCode");
 
         AsYouTypeFormatter asYouTypeFormatter = phoneUtil.getAsYouTypeFormatter(isoCode.toUpperCase());
         String res = null;
