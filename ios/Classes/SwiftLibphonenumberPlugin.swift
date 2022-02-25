@@ -88,8 +88,12 @@ public class SwiftLibphonenumberPlugin: NSObject, FlutterPlugin {
         let phoneNumberKit : PhoneNumberKit = PhoneNumberKit()
         
         do {
-            let p : PhoneNumber = try phoneNumberKit.parse(phoneNumber, withRegion: isoCode.uppercased())
-            
+            let p : PhoneNumber
+            if(isoCode == nil || isoCode.isEmpty){
+                p=try phoneNumberKit.parse(phoneNumber)
+            }else{
+                p=try phoneNumberKit.parse(phoneNumber, withRegion: isoCode.uppercased())
+            }
             let regionCode : String? = phoneNumberKit.getRegionCode(of: p)
             let countryCode : String? = String(p.countryCode);// p.countryCode.s .stringValue as String
             let formattedNumber : String? = try phoneNumberKit.format(p,toType: .national)
